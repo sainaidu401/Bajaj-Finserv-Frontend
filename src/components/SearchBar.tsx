@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Autocomplete, TextField, AutocompleteChangeReason } from '@mui/material';
+import { Autocomplete, TextField } from '@mui/material';
 import { Doctor } from '../types/Doctor';
 
 interface SearchBarProps {

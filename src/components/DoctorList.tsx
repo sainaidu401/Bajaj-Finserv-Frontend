@@ -24,9 +24,9 @@ const DoctorList = ({ doctors, loading }: DoctorListProps) => {
   }
 
   return (
-    <Grid container spacing={2}>
+    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: 2 }}>
       {doctors.map((doctor) => (
-        <Grid item xs={12} sm={6} md={4} key={doctor.id}>
+        <Box key={doctor.id}>
           <Card 
             data-testid="doctor-card"
             sx={{ 
@@ -131,9 +131,9 @@ const DoctorList = ({ doctors, loading }: DoctorListProps) => {
               </Box>
             </CardContent>
           </Card>
-        </Grid>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   );
 };
 
