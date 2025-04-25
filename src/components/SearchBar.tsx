@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, TextField, AutocompleteChangeReason } from '@mui/material';
 import { Doctor } from '../types/Doctor';
 
 interface SearchBarProps {
@@ -11,7 +11,7 @@ interface SearchBarProps {
 const SearchBar = ({ value, onChange, doctors }: SearchBarProps) => {
   const [suggestions, setSuggestions] = useState<Doctor[]>([]);
 
-  const handleInputChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+  const handleInputChange = (_: React.SyntheticEvent, newValue: string) => {
     onChange(newValue);
     if (newValue.length >= 2) {
       const filtered = doctors
@@ -29,7 +29,10 @@ const SearchBar = ({ value, onChange, doctors }: SearchBarProps) => {
       options={suggestions}
       getOptionLabel={(option) => typeof option === 'string' ? option : option.name}
       value={value}
-      onChange={handleInputChange}
+      onChange={(_, newValue) => {
+        onChange(typeof newValue === 'string' ? newValue : newValue?.name || '');
+      }}
+      onInputChange={handleInputChange}
       renderInput={(params) => (
         <TextField
           {...params}

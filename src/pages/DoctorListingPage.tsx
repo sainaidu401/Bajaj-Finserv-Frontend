@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Container, Grid, Paper } from '@mui/material';
+import { Box, Container, Paper } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { Doctor, FilterState } from '../types/Doctor';

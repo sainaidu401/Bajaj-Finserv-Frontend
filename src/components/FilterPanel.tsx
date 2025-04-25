@@ -1,6 +1,5 @@
 import {
   Box,
-  Typography,
   FormControl,
   FormControlLabel,
   FormLabel,
