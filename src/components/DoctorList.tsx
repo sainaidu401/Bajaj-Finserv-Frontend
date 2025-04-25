@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography, Chip, CircularProgress, Grid } from '@mui/material';
+import { Box, Card, CardContent, Typography, Chip, CircularProgress } from '@mui/material';
 import { Doctor } from '../types/Doctor';
 
 interface DoctorListProps {
